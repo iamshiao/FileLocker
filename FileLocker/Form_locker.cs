@@ -22,13 +22,34 @@ namespace FileLocker
 
         private void button_lock_Click(object sender, EventArgs e)
         {
-            _fs = new FileStream(textBox_path.Text, FileMode.Open, FileAccess.Read, FileShare.None);
+            try
+            {
+                if (!File.Exists(textBox_path.Text))
+                {
+                    throw new Exception("Can't find a valid file from provided path");
+                }
+
+                _fs = new FileStream(textBox_path.Text, FileMode.Open, FileAccess.Read, FileShare.None);
+                MessageBox.Show("File locked successfully", "File Locker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to lock the file. {ex.Message}", "File Locker", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_unlock_Click(object sender, EventArgs e)
         {
-            _fs.Close();
-            _fs.Dispose();
+            try
+            {
+                _fs.Close();
+                _fs.Dispose();
+                MessageBox.Show("File unlocked successfully", "File Locker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to unlock the file. {ex.Message}", "File Locker", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
