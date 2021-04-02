@@ -37,9 +37,10 @@
             // 
             // textBox_path
             // 
-            this.textBox_path.Location = new System.Drawing.Point(12, 12);
+            this.textBox_path.Location = new System.Drawing.Point(12, 15);
+            this.textBox_path.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_path.Name = "textBox_path";
-            this.textBox_path.Size = new System.Drawing.Size(613, 22);
+            this.textBox_path.Size = new System.Drawing.Size(613, 27);
             this.textBox_path.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -50,9 +51,10 @@
             // 
             // button_unlock
             // 
-            this.button_unlock.Location = new System.Drawing.Point(550, 40);
+            this.button_unlock.Location = new System.Drawing.Point(550, 50);
+            this.button_unlock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_unlock.Name = "button_unlock";
-            this.button_unlock.Size = new System.Drawing.Size(75, 23);
+            this.button_unlock.Size = new System.Drawing.Size(75, 29);
             this.button_unlock.TabIndex = 2;
             this.button_unlock.Text = "unlock";
             this.button_unlock.UseVisualStyleBackColor = true;
@@ -60,23 +62,25 @@
             // 
             // button_lock
             // 
-            this.button_lock.Location = new System.Drawing.Point(12, 40);
+            this.button_lock.Location = new System.Drawing.Point(12, 50);
+            this.button_lock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_lock.Name = "button_lock";
-            this.button_lock.Size = new System.Drawing.Size(75, 23);
+            this.button_lock.Size = new System.Drawing.Size(75, 29);
             this.button_lock.TabIndex = 3;
             this.button_lock.Text = "lock";
             this.button_lock.UseVisualStyleBackColor = true;
             this.button_lock.Click += new System.EventHandler(this.button_lock_Click);
             // 
-            // Form1
+            // Form_locker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 126);
+            this.ClientSize = new System.Drawing.Size(640, 158);
             this.Controls.Add(this.button_lock);
             this.Controls.Add(this.button_unlock);
             this.Controls.Add(this.textBox_path);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "Form_locker";
             this.Text = "FileLocker";
             this.ResumeLayout(false);
             this.PerformLayout();
